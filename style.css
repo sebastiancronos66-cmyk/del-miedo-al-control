@@ -299,8 +299,12 @@ img {
   position: relative;
   width: 200px;
   height: 200px;
-  flex-shrink: 0;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  transform: translateZ(0); /* fuerza render suave en Safari */
 }
+
 
 .learn-img img {
   width: 100%;
@@ -436,14 +440,94 @@ img {
 }
 
 
-/* FAQ */
+/* ===== FAQ ===== */
 .faq {
-  padding: 80px 0;
+  padding: 80px 20px;
+  background: #0f0f0f;
+}
+
+
+.faq-list {
+  max-width: 800px;
+  margin: 50px auto 0;
 }
 
 .faq-item {
-  margin-bottom: 25px;
+  background: #141414;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
 }
+
+.faq-item:hover {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 26px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #f5f5f5;
+  position: relative;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item p {
+  padding: 0 26px 24px;
+  color: #cfcfcf;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.faq {
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    #0f0f0f
+  );
+}
+
+
+/* Quitar marcador default */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
 
 /* CTA */
 .cta {
@@ -544,8 +628,8 @@ img {
 
   /* FIX SAFARI iOS – LEARN */
   .learn-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 
   .learn-icon {

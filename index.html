@@ -18,6 +18,8 @@
 <!-- HERO -->
 <header class="hero">
   <div class="container hero-grid">
+    <div class="hero-bg"></div>
+     <div class="container hero-grid"></div>
 
     <div class="hero-image">
       <img src="imagenes/Sin título.png" alt="Foto Steffany">
@@ -127,7 +129,7 @@
 <section class="faq">
   <div class="container">
     <h2 class="section-title">
-      Preguntas frecuentes
+      FAQ'S?
     </h2>
 
     <div class="faq-list">
@@ -190,18 +192,45 @@
 </section>
 
 
-  <!-- CTA FINAL -->
-  <section id="registro" class="cta">
-    <div class="container">
-      <h2>Reserva tu cupo ahora</h2>
-      <p>Empieza el 2026 con una base sólida y profesional.</p>
-      <a href="#" class="btn-primary">Quiero participar</a>
-    </div>
-  </section>
+<!-- CTA FINAL -->
+<h2 class="cta-title">
+  Reserva tu cupo<br>
+  <span>y trabaja con control</span>
+</h2>
+
+
+    <p class="cta-subtitle">
+      Entrenamiento gratuito de 3 días + acceso al grupo privado de WhatsApp
+    </p>
+
+    <form class="cta-form" onsubmit="goToWhatsApp(event)">
+      <input
+        type="email"
+        placeholder="Tu correo (opcional)"
+        aria-label="Correo electrónico"
+      />
+
+      <button type="submit">
+        Entrar al grupo de WhatsApp
+      </button>
+    </form>
+
+    <small class="cta-note">
+      Cupos limitados · Acceso inmediato
+    </small>
+  </div>
+</section>
+
 
   <footer class="footer">
-    <p>© 2026 Microweek · Todos los derechos reservados</p>
+    <p>© 2026 Del miedo al dolor · Todos los derechos reservados</p>
   </footer>
 
+<script>
+  function goToWhatsApp(e) {
+    e.preventDefault();
+    window.location.href = "https://chat.whatsapp.com/TU_LINK_AQUI";
+  }
+</script>
 </body>
 </html>

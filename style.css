@@ -122,6 +122,7 @@ img {
 }
 
 
+
 /* HERO TITLE ANIMADO */
 .hero-title {
   font-size: clamp(2.6rem, 5vw, 4rem);
@@ -379,6 +380,40 @@ img {
 
 
 /* MOBILE FIRST ORDER */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(245,201,122,0.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(245,201,122,0.08), transparent 45%);
+
+  animation: heroFloat 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-image {
   order: 1;
   display: flex;
@@ -444,7 +479,10 @@ img {
 .faq {
   padding: 80px 20px;
   background: #0f0f0f;
+  margin-bottom: 140px; /* 👈 ESTE es el espacio real */
 }
+
+
 
 
 .faq-list {
@@ -529,13 +567,141 @@ img {
 }
 
 
-/* CTA */
+/* CTA FINAL */
 .cta {
-  background: var(--accent);
+  padding: 100px 20px;
+  background: #000;
+  color: #fff;
   text-align: center;
-  padding: 80px 20px;
-  color: #000;
+
+  margin-top: 120px; /* 👈 separación real */
 }
+
+
+.cta-title {
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cta-title span {
+  display: inline-block;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #f5c97a,
+    #ff9f43,
+    #f5c97a
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 3s linear infinite,
+             breathe 2.5s ease-in-out infinite;
+}
+
+
+
+.cta h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.cta-subtitle {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  opacity: 0.8;
+}
+
+.cta-form {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-form input {
+  padding: 14px 18px;
+  min-width: 260px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 1rem;
+}
+
+.cta-form button {
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(244, 196, 48, 0.45);
+}
+
+.cta-form button {
+  animation: pulseGlow 2.4s infinite;
+}
+
+
+
+.cta-note {
+  display: block;
+  width: fit-content;
+  margin: 16px auto 0;   /* menos espacio vertical */
+  padding: 4px 10px;     /* MÁS pequeño */
+  border-radius: 12px;   /* deja de parecer botón */
+
+  background: rgba(201, 161, 74, 0.12);
+  color: #c9a14a;
+
+  font-size: 0.68rem;    /* ↓ tamaño real */
+  font-weight: 600;      /* ↓ peso */
+  letter-spacing: 0.5px;/* ↓ agresividad */
+  animation: softPulse 3.5s ease-in-out infinite;
+  text-align: center;
+}
+
+
+
+.cta-subtitle {
+  opacity: 0.85;
+}
+
+.cta-form input {
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cta-form input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+
+
+
+
 
 /* FOOTER */
 .footer {

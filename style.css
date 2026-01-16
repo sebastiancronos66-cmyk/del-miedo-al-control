@@ -299,15 +299,14 @@ img {
   position: relative;
   width: 200px;
   height: 200px;
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .learn-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
 }
 
 .learn-item:hover .learn-img img {
@@ -523,3 +522,38 @@ img {
     transform: scale(1);
   }
 }
+
+@media (max-width: 767px) {
+  .learn-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 1.4rem;
+    animation: floatIcon 2.5s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .hero-text a.btn-primary {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+
+  /* FIX SAFARI iOS – LEARN */
+  .learn-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .learn-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 1.4rem;
+    animation: floatIcon 2s ease-in-out infinite;
+  }
+
+}
+

@@ -234,6 +234,145 @@ img {
   line-height: 1.6;
 }
 
+/* ===== SECCION LEARN ===== */
+.learn {
+  padding: 80px 20px;
+  background: #0b0b0b;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #f5c97a,
+    #ff9f43,
+    #f5c97a
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 3s linear infinite, breathe 2.5s ease-in-out infinite;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #b5b5b5;
+  font-size: 1.1rem;
+}
+
+/* ===== GRID Y CARD DE LEARN ===== */
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.learn-item {
+  background: #141414;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-item:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.learn-img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.learn-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.learn-item:hover .learn-img img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.learn-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  animation: floatIcon 2s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(-5deg); }
+}
+
+.learn-item h3 {
+  color: #c9a14a;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.learn-item h3 {
+  font-size: 1.4rem; /* un poquito más grande */
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #f5c97a, #ff9f43, #f5c97a);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shineText 3s linear infinite, breatheText 2.5s ease-in-out infinite;
+  text-align: center;
+}
+
+/* Animaciones del título */
+@keyframes shineText {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes breatheText {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Hover opcional para que se ilumine aún más */
+.learn-item:hover h3 {
+  transform: scale(1.08);
+}
+
+
+.learn-item p {
+  color: #cfcfcf;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+
 
 
 /* MOBILE FIRST ORDER */
@@ -297,30 +436,6 @@ img {
   border-radius: 20px;
 }
 
-/* TESTIMONIOS */
-.testimonials {
-  background: #111;
-  color: #fff;
-  padding: 80px 0;
-}
-
-.testimonials-grid {
-  display: grid;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.testimonial-card {
-  background: #1b1b1b;
-  padding: 30px;
-  border-radius: 20px;
-}
-
-.testimonial-card img {
-  border-radius: 50%;
-  width: 80px;
-  margin-bottom: 15px;
-}
 
 /* FAQ */
 .faq {

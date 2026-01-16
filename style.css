@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* BASE */
 body {
   font-family: 'Inter', sans-serif;
